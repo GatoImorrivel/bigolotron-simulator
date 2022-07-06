@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import com.usguri.reigns.characters.Character;
+import java.io.IOException;
 
 /**
  * FXML Controller class
@@ -47,10 +48,16 @@ public class DialogController implements Initializable {
 				for(Option o1 : CharacterManager.getCurrentChar().getDialogs()[0].getOptions())	 {
                     			if(event.getSource().toString().contains(o1.getText())) {
 						Character current = CharacterManager.getCurrentChar();
-						current.setAliance(current.getAliance() - o1.getAlianceEffect());
-						current.setArmy(current.getArmy() - o1.getArmyEffect());
-						current.setMoney(current.getMoney() - o1.getMoneyEffect());
-						current.setResources(current.getResources() - o1.getResourceEffect());
+						if(current.getAliance() < -10) {
+							try {
+								App.setRoot("fim");
+							}
+							 catch (IOException e) {};
+						}
+						current.setAliance(current.getAliance() + o1.getAlianceEffect());
+						current.setArmy(current.getArmy() + o1.getArmyEffect());
+						current.setMoney(current.getMoney() + o1.getMoneyEffect());
+						current.setResources(current.getResources() + o1.getResourceEffect());
 						System.out.println("Aliance: " + current.getAliance());
 						System.out.println("Army: " + current.getArmy());
 						System.out.println("Money: " + current.getMoney());
