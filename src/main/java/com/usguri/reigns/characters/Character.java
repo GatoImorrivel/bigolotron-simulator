@@ -5,6 +5,7 @@
 package com.usguri.reigns.characters;
 
 import com.usguri.reigns.Dialog;
+import javafx.scene.image.Image;
 
 /**
  *
@@ -13,6 +14,8 @@ import com.usguri.reigns.Dialog;
 public class Character {
     protected String name;
     protected Dialog[] dialogs;
+    protected Image background;
+    protected Image avatar;
     protected double aliance;
     protected double money;
     protected double resources;
@@ -65,5 +68,19 @@ public class Character {
     public void setArmy(double army) {
         this.army = army;
     }
+
+	/**
+	 * @return the background
+	 */
+	public Image getBackground() {
+		return background;
+	}
+
+	/**
+	 * @return the avatar
+	 */
+	public Image getAvatar() {
+		return avatar;
+	}
 
 }

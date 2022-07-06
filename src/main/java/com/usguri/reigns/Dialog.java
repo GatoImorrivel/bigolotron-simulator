@@ -10,16 +10,18 @@ package com.usguri.reigns;
  */
 public class Dialog {
     private String content;
-    private double alianceEffect;
-    private double armyEffect;
-    private double resourcesEffect;
-    private double moneyEffect;
+    private Option[] options;
     
-    public Dialog(String content, double alianceEffect, double armyEffect, double resourcesEffect, double moneyEffect) {
+    public Dialog(String content, Option[] options) {
         this.content = content;
-        this.alianceEffect = alianceEffect;
-        this.armyEffect = armyEffect;
-        this.resourcesEffect = resourcesEffect;
-        this.moneyEffect = moneyEffect;
+	this.options = options;
     }
+
+	public String getContent() {
+		return content;
+	}
+
+	public Option[] getOptions() {
+		return options;
+	}
 }

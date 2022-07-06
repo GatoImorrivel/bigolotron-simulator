@@ -7,6 +7,7 @@ package com.usguri.reigns;
 import com.usguri.reigns.characters.Netuno;
 import com.usguri.reigns.characters.Character;
 import com.usguri.reigns.characters.Goes;
+import com.usguri.reigns.characters.Jose;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class CharacterManager {
     private CharacterManager() {
         characters.add(new Netuno());
         characters.add(new Goes());
+        characters.add(new Jose());
     }
     
     public static CharacterManager getInstance() {
@@ -47,6 +49,10 @@ public class CharacterManager {
     
     public static void setCurrentChar(int index) {
         currentCharacter = characters.get(index);
+    }
+    
+    public static void setCurrentChar(String name) {
+        currentCharacter = CharacterManager.getByName(name);
     }
     
     public static Character getCurrentChar() {
