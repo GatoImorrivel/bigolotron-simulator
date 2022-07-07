@@ -15,6 +15,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static CharacterManager charManager;
+    private static String currentFXML;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -22,11 +23,23 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         
+	currentFXML = "primary";
         charManager = CharacterManager.getInstance();
     }
 
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+	currentFXML = fxml;
+    }
+
+    public static void changeScene(String fxml) {
+    	try {
+		setRoot(fxml);
+	} catch(IOException e) {};
+    }
+
+    public static void reload() {
+    	changeScene(currentFXML);	
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

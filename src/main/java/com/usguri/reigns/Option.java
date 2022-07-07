@@ -11,20 +11,23 @@ package com.usguri.reigns;
 public class Option {
 	private String text;
 	private double alianceEffect, armyEffect, resourceEffect, moneyEffect;
+	private int nextDialogIdx;
 
-	public Option(String text, double alianceEffect, double armyEffect, double moneyEffect, double resourceEffect) {
+	public Option(String text, double alianceEffect, double armyEffect, double moneyEffect, double resourceEffect, int nextDialogIdx) {
 		this.text = text;
 		this.alianceEffect = alianceEffect;
 		this.armyEffect = armyEffect;
 		this.moneyEffect = moneyEffect;
 		this.resourceEffect = resourceEffect;
+		this.nextDialogIdx = nextDialogIdx;
 	}
 
-	public Option(String text) {
+	public Option(String text, int nextDialogIdx) {
 		this.text = text;
 		this.alianceEffect = 0;
 		this.armyEffect = 0;
 		this.resourceEffect = 0;
+		this.nextDialogIdx = nextDialogIdx;
 		this.moneyEffect = 0;
 	}
 
@@ -46,5 +49,13 @@ public class Option {
 
 	public double getMoneyEffect() {
 		return moneyEffect;
+	}
+
+	public int getNextDialogIdx() {
+		return nextDialogIdx;
+	}
+
+	public void setNextDialogIdx(int nextDialogIdx) {
+		this.nextDialogIdx = nextDialogIdx;
 	}
 }

@@ -20,6 +20,7 @@ public class Character {
     protected double money;
     protected double resources;
     protected double army;
+    protected int currentDialog;
 
     public String getName() {
         return name;
@@ -69,18 +70,20 @@ public class Character {
         this.army = army;
     }
 
-	/**
-	 * @return the background
-	 */
 	public Image getBackground() {
 		return background;
 	}
 
-	/**
-	 * @return the avatar
-	 */
 	public Image getAvatar() {
 		return avatar;
+	}
+
+	public int getCurrentDialog() {
+		return currentDialog;
+	}
+
+	public void setCurrentDialog(int currentDialog) {
+		this.currentDialog = currentDialog;
 	}
 
 }

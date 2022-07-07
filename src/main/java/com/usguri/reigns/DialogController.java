@@ -33,40 +33,54 @@ public class DialogController implements Initializable {
 
 	@FXML
 	private VBox optionBox;
+
+	@FXML
+	private Label alianceLabel;
+
+	@FXML
+	private Label armyLabel;
+
+	@FXML
+	private Label moneyLabel;
+
+	@FXML
+	private Label resourcesLabel;
 	
 	/**
 	 * Initializes the controller class.
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		int currentDialog = CharacterManager.getCurrentChar().getCurrentDialog();
 		this.avatarImage.setImage(CharacterManager.getCurrentChar().getAvatar());
 		this.backgroundImage.setImage(CharacterManager.getCurrentChar().getBackground());
-		this.dialogLabel.setText(CharacterManager.getCurrentChar().getDialogs()[0].getContent());
-		for(Option o : CharacterManager.getCurrentChar().getDialogs()[0].getOptions()) {
+		this.dialogLabel.setText(CharacterManager.getCurrentChar().getDialogs()[currentDialog].getContent());
+		this.alianceLabel.setText("" + CharacterManager.getCurrentChar().getAliance());
+		this.armyLabel.setText("" + CharacterManager.getCurrentChar().getArmy());
+		this.moneyLabel.setText("" + CharacterManager.getCurrentChar().getMoney());
+		this.resourcesLabel.setText("" + CharacterManager.getCurrentChar().getResources());
+
+		for(Option o : CharacterManager.getCurrentChar().getDialogs()[currentDialog].getOptions()) {
 			Button btn = new Button(o.getText());
 			btn.setOnAction(event -> {
-				for(Option o1 : CharacterManager.getCurrentChar().getDialogs()[0].getOptions())	 {
+				for(Option o1 : CharacterManager.getCurrentChar().getDialogs()[CharacterManager.getCurrentChar().getCurrentDialog()].getOptions())	 {
                     			if(event.getSource().toString().contains(o1.getText())) {
 						Character current = CharacterManager.getCurrentChar();
-						if(current.getAliance() < -10) {
-							try {
-								App.setRoot("fim");
-							}
-							 catch (IOException e) {};
-						}
 						current.setAliance(current.getAliance() + o1.getAlianceEffect());
 						current.setArmy(current.getArmy() + o1.getArmyEffect());
 						current.setMoney(current.getMoney() + o1.getMoneyEffect());
 						current.setResources(current.getResources() + o1.getResourceEffect());
-						System.out.println("Aliance: " + current.getAliance());
-						System.out.println("Army: " + current.getArmy());
-						System.out.println("Money: " + current.getMoney());
-						System.out.println("Resources: " + current.getResources());
+						current.setCurrentDialog(o1.getNextDialogIdx());
+						App.reload();
 					}
 				}
 			});
 			this.optionBox.getChildren().add(btn);
 		}
 	}	
-	
+
+	@FXML
+	public void handleVoltar() {
+		App.changeScene("secondary");
+	}
 }
