@@ -12,7 +12,7 @@ import javafx.scene.image.Image;
  *
  * @author Gui
  */
-public class Netuno extends Character {
+public class Netuno extends Person {
     public Netuno() {
         this.name = "Netuno";
         this.aliance = 0;

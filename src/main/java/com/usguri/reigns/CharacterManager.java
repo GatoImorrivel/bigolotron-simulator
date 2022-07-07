@@ -5,9 +5,10 @@
 package com.usguri.reigns;
 
 import com.usguri.reigns.characters.Netuno;
-import com.usguri.reigns.characters.Character;
+import com.usguri.reigns.characters.Person;
 import com.usguri.reigns.characters.Goes;
 import com.usguri.reigns.characters.Jose;
+import com.usguri.reigns.characters.Kalani;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +17,15 @@ import java.util.List;
  * @author Gui
  */
 public class CharacterManager {
-    private static final List<Character> characters = new ArrayList<>();
+    private static final List<Person> characters = new ArrayList<>();
     private static CharacterManager instance = null;
-    private static Character currentCharacter;
+    private static Person currentCharacter;
     
     private CharacterManager() {
         characters.add(new Netuno());
         characters.add(new Goes());
         characters.add(new Jose());
+        characters.add(new Kalani());
     }
     
     public static CharacterManager getInstance() {
@@ -33,7 +35,7 @@ public class CharacterManager {
         return instance;
     }
         
-    public static Character getByName(String name) {
+    public static Person getByName(String name) {
         for (int i = 0; i < 10; i++) {
             if(characters.get(i).getName().equals(name)) {
                 return characters.get(i);
@@ -43,7 +45,7 @@ public class CharacterManager {
         return null;
     }
     
-    public static List<Character> getCharacters() {
+    public static List<Person> getCharacters() {
         return characters;
     }
     
@@ -55,7 +57,17 @@ public class CharacterManager {
         currentCharacter = CharacterManager.getByName(name);
     }
     
-    public static Character getCurrentChar() {
+    public static Person getCurrentChar() {
         return currentCharacter;
+    }
+
+    public static void calculateRelations(Person c, Option selectedOption) {
+	c.changeAliance(selectedOption.getAlianceEffect());
+	c.changeArmy(selectedOption.getArmyEffect());
+	c.changeMoney(selectedOption.getMoneyEffect());
+	c.changeResources(selectedOption.getResourceEffect());
+	for(Person enemy : c.getEnemies()) {
+		enemy.changeAliance(selectedOption.getAlianceEffect() * -1);
+	}
     }
 }

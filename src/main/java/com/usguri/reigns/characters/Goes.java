@@ -12,10 +12,10 @@ import javafx.scene.image.Image;
  *
  * @author Gui
  */
-public class Goes extends Character {
+public class Goes extends Person {
     public Goes() {
         this.name = "Goes";
-        this.aliance = 0;
+        this.aliance = 500;
         this.army = 0;
         this.money = 0;
         this.resources = 0;

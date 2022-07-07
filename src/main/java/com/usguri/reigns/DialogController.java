@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import com.usguri.reigns.characters.Character;
+import com.usguri.reigns.characters.Person;
 import java.io.IOException;
 
 /**
@@ -63,13 +63,12 @@ public class DialogController implements Initializable {
 		for(Option o : CharacterManager.getCurrentChar().getDialogs()[currentDialog].getOptions()) {
 			Button btn = new Button(o.getText());
 			btn.setOnAction(event -> {
-				for(Option o1 : CharacterManager.getCurrentChar().getDialogs()[CharacterManager.getCurrentChar().getCurrentDialog()].getOptions())	 {
+				Person current = CharacterManager.getCurrentChar();
+				Option[] options = current.getDialogs()[current.getCurrentDialog()].getOptions();
+				for(Option o1 : options) {
                     			if(event.getSource().toString().contains(o1.getText())) {
-						Character current = CharacterManager.getCurrentChar();
-						current.setAliance(current.getAliance() + o1.getAlianceEffect());
-						current.setArmy(current.getArmy() + o1.getArmyEffect());
-						current.setMoney(current.getMoney() + o1.getMoneyEffect());
-						current.setResources(current.getResources() + o1.getResourceEffect());
+						System.out.println("Entered: " + o1.getText());
+						CharacterManager.calculateRelations(current, o1);
 						current.setCurrentDialog(o1.getNextDialogIdx());
 						App.reload();
 					}
