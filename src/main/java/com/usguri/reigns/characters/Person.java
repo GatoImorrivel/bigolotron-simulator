@@ -16,7 +16,7 @@ public class Person {
 	protected String name;
 	protected Dialog[] dialogs = {};
 	protected Person[] enemies = {};
-	protected double negativityMultiplier = 1;
+	protected double negativityMultiplier = 1.75;
 	protected Image background;
 	protected Image avatar;
 	protected double aliance = 0;

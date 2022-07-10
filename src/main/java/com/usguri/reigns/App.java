@@ -15,6 +15,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static CharacterManager charManager;
+    private static DayManager dayManager;
     private static String currentFXML;
 
     @Override
@@ -25,6 +26,7 @@ public class App extends Application {
         
 	currentFXML = "primary";
         charManager = CharacterManager.getInstance();
+        dayManager = DayManager.getInstance();
     }
 
     static void setRoot(String fxml) throws IOException {

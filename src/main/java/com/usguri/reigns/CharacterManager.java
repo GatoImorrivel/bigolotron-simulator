@@ -69,5 +69,6 @@ public class CharacterManager {
 	for(Person enemy : c.getEnemies()) {
 		enemy.changeAliance(selectedOption.getAlianceEffect() * -1);
 	}
+	DayManager.incrementAction();
     }
 }

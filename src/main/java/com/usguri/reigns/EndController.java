@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author gato
  */
-public class FimController implements Initializable {
+public class EndController implements Initializable {
 
 	/**
 	 * Initializes the controller class.

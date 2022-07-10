@@ -6,16 +6,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
 import com.usguri.reigns.characters.Person;
-import java.io.IOException;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class SecondaryController implements Initializable {
 
     @FXML
-    private VBox root;
+    private VBox charBox;
+
+    @FXML
+    private Label dayCounter;
     
     @FXML
     public void initialize(URL url, ResourceBundle rs) {
+	this.dayCounter.setText(DayManager.getCurrentDayAsString());
         for (Person c : CharacterManager.getCharacters()) {
             Button btn = new Button();
             btn.setText(c.getName());
@@ -28,7 +32,7 @@ public class SecondaryController implements Initializable {
                     }
                 }
             });
-            root.getChildren().add(btn);
+            charBox.getChildren().add(btn);
         }
     }
 }

@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import com.usguri.reigns.characters.Person;
-import java.io.IOException;
 
 /**
  * FXML Controller class
@@ -45,12 +44,16 @@ public class DialogController implements Initializable {
 
 	@FXML
 	private Label resourcesLabel;
+
+	@FXML
+	private Label dayCounter;
 	
 	/**
 	 * Initializes the controller class.
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		this.dayCounter.setText(DayManager.getCurrentDayAsString());
 		int currentDialog = CharacterManager.getCurrentChar().getCurrentDialog();
 		this.avatarImage.setImage(CharacterManager.getCurrentChar().getAvatar());
 		this.backgroundImage.setImage(CharacterManager.getCurrentChar().getBackground());
