@@ -82,6 +82,10 @@ public class CharacterManager {
 		Person enemy = CharacterManager.getByName(enemyName);
 		enemy.changeAliance(selectedOption.getAlianceEffect() * -1);
 	}
+	for(String allyName : c.getAlies()) {
+		Person enemy = CharacterManager.getByName(allyName);
+		enemy.changeAliance(selectedOption.getAlianceEffect());
+	}
 	if(selectedOption.isAffectPlayer()) {
 		Player.changeArmy(selectedOption.getArmyEffect() * -1);
 		Player.changeMoney(selectedOption.getMoneyEffect() * -1);

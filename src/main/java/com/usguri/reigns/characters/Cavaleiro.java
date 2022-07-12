@@ -28,6 +28,11 @@ public class Cavaleiro extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {
+			"Isabeu, a Guerreira das Nuvens"
+		};
+		this.alies = a;
+		
 		this.currentDialog = 0;
 	}	
 }

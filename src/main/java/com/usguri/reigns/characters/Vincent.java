@@ -26,6 +26,11 @@ public class Vincent extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {
+			"Sir Guilherme II"
+		};
+		this.alies = a;
+		
 		this.currentDialog = 0;
 	}	
 }

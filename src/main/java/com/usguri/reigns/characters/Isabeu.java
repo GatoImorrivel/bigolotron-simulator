@@ -26,6 +26,11 @@ public class Isabeu extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {
+			"Cavaleiro"
+		};
+		this.alies = a;
+		
 		this.currentDialog = 0;
 	}	
 }

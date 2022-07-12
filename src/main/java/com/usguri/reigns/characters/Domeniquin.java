@@ -26,6 +26,9 @@ public class Domeniquin extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {};
+		this.alies = a;
+
 		this.currentDialog = 0;
 	}	
 }

@@ -26,6 +26,12 @@ public class Arthur extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {
+			"Elisabet Frogin",
+			"Anaje"
+		};
+		this.alies = a;
+
 		this.currentDialog = 0;
 	}	
 }

@@ -30,6 +30,12 @@ public class Anaje extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {
+			"Elisabet Frogin",
+			"Rei Arthur Praiano"
+		};
+		this.alies = a; 
+
 		this.currentDialog = 0;
 	}	
 }

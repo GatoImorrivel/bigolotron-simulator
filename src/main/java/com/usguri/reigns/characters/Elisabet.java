@@ -27,6 +27,12 @@ public class Elisabet extends Person {
 		};
 		this.enemies = e;
 
+		String[] a = {
+			"Anaje",
+			"Rei Arthur Praiano"
+		};
+		this.alies = a;
+
 		this.currentDialog = 0;
 	}	
 }

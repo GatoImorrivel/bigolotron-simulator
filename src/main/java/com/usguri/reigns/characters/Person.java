@@ -16,6 +16,7 @@ public class Person {
 	protected String name;
 	protected Dialog[] dialogs = {};
 	protected String[] enemies = {};
+	protected String[] alies = {};
 	protected double negativityMultiplier = 1.75;
 	protected Image background;
 	protected Image avatar;
@@ -94,6 +95,10 @@ public class Person {
 		return enemies;
 	}
 
+	public String[] getAlies() {
+		return alies;
+	}
+
 	public void changeAliance(double changeAmount) {
 		if (changeAmount < 0) {
 			this.aliance += changeAmount * this.negativityMultiplier;
@@ -128,5 +133,9 @@ public class Person {
 		}
 
 		this.resources += changeAmount;
+	}
+
+	public double getMinValueForAliance() {
+		return minValueForAliance;
 	}
 }
