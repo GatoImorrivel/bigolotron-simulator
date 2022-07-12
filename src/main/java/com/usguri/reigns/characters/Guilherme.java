@@ -18,7 +18,7 @@ public class Guilherme extends Person {
 		this.minValueForAliance = 130;
 		this.avatar = new Image("file:images/Person8.png");
 		this.background = new Image("file:images/BG8.png");
-		Option[] temp = {new Option("Oi", 10, 10, 10, 10, true, 0)};
+		Option[] temp = {new Option("Oi", 10, 10, 10, 10, false, 0)};
 		Dialog[] d = {new Dialog("Temp", temp)};	
 		this.dialogs = d;
 		String[] e = {

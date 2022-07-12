@@ -18,7 +18,7 @@ public class Elisabet extends Person {
 		this.minValueForAliance = 80;
 		this.avatar = new Image("file:images/Person5.png");
 		this.background = new Image("file:images/BG5.png");
-		Option[] temp = {new Option("Oi", 0)};
+		Option[] temp = {new Option("Oi", 10,10,10,10,false,0)};
 		Dialog[] d = {new Dialog("Temp", temp)};	
 		this.dialogs = d;
 		String[] e = {

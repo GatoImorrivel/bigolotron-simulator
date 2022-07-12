@@ -83,7 +83,7 @@ public class Aliance {
 			if(i == this.peopleInAliance.size() - 1) {
 				result += peopleInAliance.get(i).getName();
 			} else {
-				result += peopleInAliance.get(i).getName() + ",";
+				result += peopleInAliance.get(i).getName() + ", ";
 			} 
 		}
 		return result;

@@ -16,9 +16,9 @@ public class Player {
 	private static Player instance = null;
 
 	private Player() {
-		this.money = 1000;
-		this.resources = 100;
-		this.army = 100;
+		money = 1000;
+		resources = 100;
+		army = 100;
 	}
 
 	public static Player getInstance() {
