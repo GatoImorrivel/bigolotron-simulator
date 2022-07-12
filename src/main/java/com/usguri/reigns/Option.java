@@ -12,6 +12,7 @@ public class Option {
 	private String text;
 	private double alianceEffect, armyEffect, resourceEffect, moneyEffect;
 	private int nextDialogIdx;
+	private boolean affectPlayer;
 
 	public Option(String text, double alianceEffect, double armyEffect, double moneyEffect, double resourceEffect, int nextDialogIdx) {
 		this.text = text;
@@ -20,6 +21,17 @@ public class Option {
 		this.moneyEffect = moneyEffect;
 		this.resourceEffect = resourceEffect;
 		this.nextDialogIdx = nextDialogIdx;
+		this.affectPlayer = false;
+	}
+
+	public Option(String text, double alianceEffect, double armyEffect, double moneyEffect, double resourceEffect, boolean affectPlayer, int nextDialogIdx) {
+		this.text = text;
+		this.alianceEffect = alianceEffect;
+		this.armyEffect = armyEffect;
+		this.moneyEffect = moneyEffect;
+		this.resourceEffect = resourceEffect;
+		this.nextDialogIdx = nextDialogIdx;
+		this.affectPlayer = affectPlayer;
 	}
 
 	public Option(String text, int nextDialogIdx) {
@@ -29,6 +41,7 @@ public class Option {
 		this.resourceEffect = 0;
 		this.nextDialogIdx = nextDialogIdx;
 		this.moneyEffect = 0;
+		this.affectPlayer = false;
 	}
 
 	public String getText() {
@@ -57,5 +70,9 @@ public class Option {
 
 	public void setNextDialogIdx(int nextDialogIdx) {
 		this.nextDialogIdx = nextDialogIdx;
+	}
+
+	public boolean isAffectPlayer() {
+		return affectPlayer;
 	}
 }

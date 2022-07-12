@@ -46,6 +46,15 @@ public class DialogController implements Initializable {
 	private Label resourcesLabel;
 
 	@FXML
+	private Label playerArmy;
+
+	@FXML
+	private Label playerMoney;
+
+	@FXML
+	private Label playerResources;
+
+	@FXML
 	private Label dayCounter;
 	
 	/**
@@ -53,6 +62,9 @@ public class DialogController implements Initializable {
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		this.playerArmy.setText("" + Player.getArmy());
+		this.playerMoney.setText("" + Player.getMoney());
+		this.playerResources.setText("" + Player.getResources());
 		this.dayCounter.setText(DayManager.getCurrentDayAsString());
 		int currentDialog = CharacterManager.getCurrentChar().getCurrentDialog();
 		this.avatarImage.setImage(CharacterManager.getCurrentChar().getAvatar());

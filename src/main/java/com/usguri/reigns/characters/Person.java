@@ -15,7 +15,7 @@ public class Person {
 
 	protected String name;
 	protected Dialog[] dialogs = {};
-	protected Person[] enemies = {};
+	protected String[] enemies = {};
 	protected double negativityMultiplier = 1.75;
 	protected Image background;
 	protected Image avatar;
@@ -24,6 +24,7 @@ public class Person {
 	protected double resources = 0;
 	protected double army = 0;
 	protected int currentDialog = 0;
+	protected double minValueForAliance = 0;
 
 	public String getName() {
 		return name;
@@ -89,7 +90,7 @@ public class Person {
 		this.currentDialog = currentDialog;
 	}
 
-	public Person[] getEnemies() {
+	public String[] getEnemies() {
 		return enemies;
 	}
 

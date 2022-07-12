@@ -4,11 +4,17 @@
  */
 package com.usguri.reigns;
 
-import com.usguri.reigns.characters.Netuno;
+import com.usguri.reigns.characters.Anaje;
+import com.usguri.reigns.characters.Arthur;
+import com.usguri.reigns.characters.Bigolas;
+import com.usguri.reigns.characters.Cavaleiro;
+import com.usguri.reigns.characters.Domenico;
+import com.usguri.reigns.characters.Domeniquin;
+import com.usguri.reigns.characters.Elisabet;
+import com.usguri.reigns.characters.Guilherme;
+import com.usguri.reigns.characters.Isabeu;
 import com.usguri.reigns.characters.Person;
-import com.usguri.reigns.characters.Goes;
-import com.usguri.reigns.characters.Jose;
-import com.usguri.reigns.characters.Kalani;
+import com.usguri.reigns.characters.Vincent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +28,16 @@ public class CharacterManager {
     private static Person currentCharacter;
     
     private CharacterManager() {
-        characters.add(new Netuno());
-        characters.add(new Goes());
-        characters.add(new Jose());
-        characters.add(new Kalani());
+	    characters.add(new Anaje());
+	    characters.add(new Arthur());
+	    characters.add(new Bigolas());
+	    characters.add(new Cavaleiro());
+	    characters.add(new Domenico());
+	    characters.add(new Domeniquin());
+	    characters.add(new Elisabet());
+	    characters.add(new Guilherme());
+	    characters.add(new Isabeu());
+	    characters.add(new Vincent());
     }
     
     public static CharacterManager getInstance() {
@@ -66,8 +78,14 @@ public class CharacterManager {
 	c.changeArmy(selectedOption.getArmyEffect());
 	c.changeMoney(selectedOption.getMoneyEffect());
 	c.changeResources(selectedOption.getResourceEffect());
-	for(Person enemy : c.getEnemies()) {
+	for(String enemyName : c.getEnemies()) {
+		Person enemy = CharacterManager.getByName(enemyName);
 		enemy.changeAliance(selectedOption.getAlianceEffect() * -1);
+	}
+	if(selectedOption.isAffectPlayer()) {
+		Player.changeArmy(selectedOption.getArmyEffect() * -1);
+		Player.changeMoney(selectedOption.getMoneyEffect() * -1);
+		Player.changeResources(selectedOption.getResourceEffect() * -1);
 	}
 	DayManager.incrementAction();
     }
