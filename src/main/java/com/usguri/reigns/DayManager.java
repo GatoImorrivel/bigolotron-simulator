@@ -20,7 +20,7 @@ public class DayManager {
 	this.daysPassed = 0;
 	this.actions = 0;
 	this.actionsPerDay = 10;
-	this.daysToWar = 10;
+	this.daysToWar = 3;
     }
     
     public static DayManager getInstance() {

@@ -43,7 +43,7 @@ public class Domeniquin extends Person {
 		};
 		Option[] options5 = {new Option("Não é nada. Eu já deveria ir embora.", 5)};
 		Option[] options6 = {
-			new Option("Talvez vocês ddois devessem ceder um pouco.", 7),
+			new Option("Talvez vocês dois devessem ceder um pouco.", 7),
 			new Option("Ele parece mesmo ser bastante egocêntrico.",20,0,0,0, 8),
 		};
 		Option[] options7 = {
@@ -60,6 +60,7 @@ public class Domeniquin extends Person {
 		};
 		Option[] options10 = {new Option("Por que não?", 21)};
 		Option[] options11 = {new Option("O reino dele realmente parece muito mais bonito.", -30, 0, 0, 0, 13)};
+		Option[] deadEnd = {};
 		Dialog[] d = {
 			new Dialog("Olá. seja bem-vindo a Silvermine! Você gostaria de ver as nossas mercadorias?", options0),
 			new Dialog("Nós temos de tudo! Armas de prata, moedas de prata, joias de prata, talheres de prata, ferramentas de prata...", options1),
@@ -68,21 +69,21 @@ public class Domeniquin extends Person {
 			new Dialog("Eu? Com inveja do Domenico? Tenha dó! Ele não passa de uma criança mimada e carente de atenção!", options4),
 			new Dialog("O que você quer dizer com isso?!", options5),
 			new Dialog("É impossivel colaborar com ele. Tudo o que ele quer é chamar atenção.", options6),
-			new Dialog("Isso não vai acontecer. Essa história é antiga demais para voltar atrás", temp),
-			new Dialog("E é mesmo! Obrigado por notar isso.", temp),
-			new Dialog("Enfim, você pode ir agora. Eu tenho coisas para fazer.", temp),
-			new Dialog("O que eu posso fazer? Todos sempre escutam ele. Ninguém vai dar ouvidos para a minha opinião", temp),
-			new Dialog("Muito obrigado! Isso significa muito para mim.", temp),
-			new Dialog("Você é só mais um que caiu no jogo dele! Por favor, saia do meu reino.", temp),
-			new Dialog("Não é bem assim. As coisas que produzimos aqui são otimas! Além de serem muito mais baratas.", temp),
-			new Dialog("Se você veio aqui apenas para depreciar o meu reino, já pode ir embora, pode ir embora!", temp),
-			new Dialog("Exatamente! Finalmente alguém que me entende. Muito obrigado!", temp),
-			new Dialog("E é mesmo! É dificil encontrar alguém que saiba apreciar essas belezas como eu!", temp),
-			new Dialog("Como ousa me insultar dessa forma!", temp),
-			new Dialog("Apenas saia do meu reino. Não temos mais o que conversar.", temp),
-			new Dialog("Oh, isso é ótimo! Nós não recebemos muitas visitas por aqui.", temp),
-			new Dialog("É o que eu sempre digo, mas ninguém me escuta. É bom finalmente encontrar alguém que me entenda.", temp),
-			new Dialog("Todos sempre preferiam visitar o reino do meu irmão, Domenio. Ele minera ouro e nós prata, é dificil competir.", temp),
+			new Dialog("Isso não vai acontecer. Essa história é antiga demais para voltar atrás", deadEnd),
+			new Dialog("E é mesmo! Obrigado por notar isso.", deadEnd),
+			new Dialog("Enfim, você pode ir agora. Eu tenho coisas para fazer.", deadEnd),
+			new Dialog("O que eu posso fazer? Todos sempre escutam ele. Ninguém vai dar ouvidos para a minha opinião", options7),
+			new Dialog("Muito obrigado! Isso significa muito para mim.", deadEnd),
+			new Dialog("Você é só mais um que caiu no jogo dele! Por favor, saia do meu reino.", deadEnd),
+			new Dialog("Não é bem assim. As coisas que produzimos aqui são otimas! Além de serem muito mais baratas.", options8),
+			new Dialog("Se você veio aqui apenas para depreciar o meu reino, já pode ir embora, pode ir embora!", deadEnd),
+			new Dialog("Exatamente! Finalmente alguém que me entende. Muito obrigado!", deadEnd),
+			new Dialog("E é mesmo! É dificil encontrar alguém que saiba apreciar essas belezas como eu!", deadEnd),
+			new Dialog("Como ousa me insultar dessa forma!", options9),
+			new Dialog("Apenas saia do meu reino. Não temos mais o que conversar.", deadEnd),
+			new Dialog("Oh, isso é ótimo! Nós não recebemos muitas visitas por aqui.", options10),
+			new Dialog("É o que eu sempre digo, mas ninguém me escuta. É bom finalmente encontrar alguém que me entenda.", deadEnd),
+			new Dialog("Todos sempre preferiam visitar o reino do meu irmão, Domenio. Ele minera ouro e nós prata, é dificil competir.", options11),
 		};
 		this.dialogs = d;
 		String[] e = {

@@ -8,7 +8,7 @@
 
 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #000025;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.usguri.reigns.PrimaryController">
    <children>
-      <Label prefHeight="385.0" prefWidth="1240.0" text="Um jogo de economia entre reinos. Você governa um poderoso reino e deverá criar alianças com outros reinos antes que uma terrivel guerra se inicie, faltam 10 dias para que essa guerra então seja rápido e use seu cérebro para criar a melhor estratégia!" textFill="WHITE" wrapText="true">
+      <Label prefHeight="385.0" prefWidth="1240.0" text="Um jogo de economia entre reinos. Você governa um poderoso reino e deverá criar alianças com outros reinos antes que uma terrivel guerra se inicie, faltam 3 dias para que essa guerra então seja rápido e use seu cérebro para criar a melhor estratégia!" textFill="WHITE" wrapText="true">
          <font>
             <Font size="30.0" />
          </font></Label>

@@ -28,7 +28,7 @@
                   <Image url="@Person1.png" />
                </image>
             </ImageView>
-            <Label fx:id="dialogLabel" layoutX="114.0" layoutY="80.0" prefHeight="143.0" prefWidth="580.0" text="Label" />
+            <Label fx:id="dialogLabel" layoutX="114.0" layoutY="80.0" prefHeight="143.0" prefWidth="580.0" text="Label" wrapText="true" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="932.0" prefHeight="728.0" prefWidth="334.0">
